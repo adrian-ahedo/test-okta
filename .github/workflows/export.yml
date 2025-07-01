@@ -1,0 +1,22 @@
+name: Invoke Export Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create'
+        required: true
+      applications:
+        description: 'Comma-separated applications to export'
+        required: false
+
+jobs:
+  call-export:
+    uses: Iberdrola/github-actions-auth0-deploy/.github/workflows/dev-config-tagging-v2.yaml@feature/auth0-ci
+    with:
+      tag: ${{ github.event.inputs.tag }}
+      applications: ${{ github.event.inputs.applications }}
+    secrets:
+      AUTH0_CLIENT_ID: "IvRteUXQXoOHle4lsLf9Cn8pLZ84eHJa"
+      AUTH0_CLIENT_SECRET: "7zd139sFPnVEY2RVG7czJA6OZ9W3CoYnWVMMu7iq75d4RQJIwLMTEXRHR4Gn7PGB"
+      AUTH0_DOMAIN: "swfactorytoolseu-dev.eu.auth0.com" 
