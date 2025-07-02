@@ -17,6 +17,7 @@ jobs:
       tag: ${{ github.event.inputs.tag }}
       applications: ${{ github.event.inputs.applications }}
     secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
       AUTH0_CLIENT_ID: "pBJkuNioAfmXs0NBim8JPjVYP6p9Nj58"
       AUTH0_CLIENT_SECRET: "vn02uMgaVQ-r5cZUCt7HIscINtNPJCkdaHkFPX12fcMnUwilBo85gy5bfqI9MXmJ"
       AUTH0_DOMAIN: "dev-cicd-poc-1.eu.auth0.com"
